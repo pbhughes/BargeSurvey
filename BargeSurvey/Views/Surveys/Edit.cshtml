@@ -1,0 +1,124 @@
+﻿@model BargeSurvey.Models.Survey
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Id)
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Customer, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Customer)
+                @Html.ValidationMessageFor(model => model.Customer)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Terminal, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Terminal)
+                @Html.ValidationMessageFor(model => model.Terminal)
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SamplerName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SamplerName)
+                @Html.ValidationMessageFor(model => model.SamplerName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Purpose, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Purpose)
+                @Html.ValidationMessageFor(model => model.Purpose)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SurveyDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SurveyDate)
+                @Html.ValidationMessageFor(model => model.SurveyDate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.City)
+                @Html.ValidationMessageFor(model => model.City)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.State, htmlAttributes: new { data_mini = "true" })
+                @Html.ValidationMessageFor(model => model.State)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ClosedOut, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ClosedOut)
+                @Html.ValidationMessageFor(model => model.ClosedOut)
+            </div>
+        </div>
+
+        
+        
+            <div class="form-group">
+                <div class="col-md">
+                    <input type="submit" value="Save Survey" class="btn btn-default" data-mini="true" data-inline="true"/>
+                    @Html.ActionLink("Survey List", "Index", null, new { data_role = "button", data_mini = "true", data_inline = "true", data_corner = "true" })
+                    @Html.ActionLink("Add Sample", "Create", "BargeSample", new { surveyID = Model.Id }, new { data_role = "button", data_theme = "b", data_corners = "true", data_mini = "true", data_inline = "true" })
+                </div>
+            </div>
+        </div>
+
+
+    <div data-role="collapsible">
+        <h2>Barge Samples</h2>
+
+
+        @if (Model.BargeSamples.Count > 0)
+        {
+
+            foreach (var s in Model.BargeSamples)
+            {
+                
+                    @Html.Partial("_BargeSample", s)
+               
+                    
+                
+
+            }
+
+
+        }
+       </div><!-- /grid-a -->
+
+
+
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+    
+}
