@@ -1,14 +1,10 @@
 ﻿@model IEnumerable<BargeSurvey.Models.Survey>
 
 @{
-    ViewBag.Title = "Survey List";
+    ViewBag.Title = BargeSurvey.Resource1.Title_Survey_Page;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-<p>
-    Current Surveys
-</p>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -70,8 +66,24 @@
                             @Html.DisplayFor(modelItem => item.State)
                         </div>
                     </div>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, htmlAttributes: new { data_inline = "true", data_role="button", data_mini="true" }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, htmlAttributes: new { data_inline = "true" ,data_role="button", data_mini="true"})
+
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, htmlAttributes: new { data_inline = "true", data_role = "button", data_mini = "true" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, htmlAttributes: new { data_inline = "true", data_role = "button", data_mini = "true" })
+
+
+                    <div data-role="collapsible" data-mini="true">
+                        <h2>@string.Format("{0}  Count:{0}", "Barge Samples", item.BargeSamples.Count)</h2>
+
+
+                        @if (item.BargeSamples.Count > 0)
+                        {
+                            foreach (var s in item.BargeSamples)
+                            {
+                                @Html.Partial("_BargeSample", s)
+                            }
+                        }
+                    </div><!-- /grid-a -->
+                  
 
 
                 </div>

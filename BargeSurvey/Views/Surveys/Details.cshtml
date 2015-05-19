@@ -81,7 +81,26 @@
                     </tr>
                 }
             </table>
-            
+            <div data-role="collapsible">
+                <h2>@string.Format("{0}  Count:{0}","Barge Samples", Model.BargeSamples.Count)</h2>
+
+
+                @if (Model.BargeSamples.Count > 0)
+                {
+
+                    foreach (var s in Model.BargeSamples)
+                    {
+
+                        @Html.Partial("_BargeSample", s)
+
+
+
+
+                    }
+
+
+                }
+            </div><!-- /grid-a -->
         </dd>
     </dl>
 </div>
