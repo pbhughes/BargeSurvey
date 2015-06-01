@@ -44,7 +44,6 @@ namespace BargeSurvey.Models
         [Required]
         [Display(Name="Survey Date")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [UIHint("Date")]
         public DateTime? SurveyDate { get; set; }
 
@@ -52,7 +51,7 @@ namespace BargeSurvey.Models
         public virtual ICollection<BargeSample> BargeSamples { get; set; }
 
         [Display(Name = "ClosedOut")]
-        [UIHint("IsTrue")]
+        [UIHint("Bool")]
         public bool ClosedOut { get; set; }
     }
 }

@@ -1,0 +1,88 @@
+﻿@model IEnumerable<BargeSurvey.Models.Draft>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DraftType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReadingP1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReadingP2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReadingP3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReadingP4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReadingS1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReadingS2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReadingS3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReadingS4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BargeSampleId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DraftType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReadingP1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReadingP2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReadingP3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReadingP4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReadingS1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReadingS2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReadingS3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReadingS4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BargeSampleId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

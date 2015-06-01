@@ -1,24 +1,33 @@
 ﻿@model Nullable<DateTime>
+
 @using System.Globalization;
 
 @{
-    DateTime dt = DateTime.Now;
-    if (Model != null)
+    List<SelectListItem> days = new List<SelectListItem>();
+    int numberOfDays = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
+    for (int i = 1; i <= numberOfDays; i++)
     {
-        dt = (System.DateTime)Model;
-
+        days.Add(new SelectListItem() { Text = i.ToString(), Value = i.ToString(), Selected = (i == Model.Value.Day ? true : false) });
     }
 
-    if (Request.Browser.Type.ToUpper().Contains("IE") || Request.Browser.Type.Contains("InternetExplorer"))
+    List<SelectListItem> months = new List<SelectListItem>();
+    for (int i = 1; i <= 12; i++)
     {
-        @Html.TextBox("", String.Format("{0:d}", dt.ToShortDateString()), new { @class = "datefield", type = "date" })
+        months.Add(new SelectListItem() { Text = i.ToString(), Value = i.ToString(), Selected = (i == Model.Value.Month ? true : false) });
     }
-    else
+
+    List<SelectListItem> years = new List<SelectListItem>();
+
+    int prevYearCount = 15;
+    int nextYearCount = 15;
+
+    for (int i = Model.Value.Year - prevYearCount; i <= Model.Value.Year + nextYearCount; i++)
     {
-        //Tested in chrome
-        DateTimeFormatInfo dtfi = CultureInfo.CreateSpecificCulture("en-US").DateTimeFormat;
-        dtfi.DateSeparator = "-";
-        dtfi.ShortDatePattern = @"dd/MM/yyyy";
-        @Html.TextBox("", String.Format("{0:d}", dt.ToString("d", dtfi)), new { @class = "datefield", type = "date" })
+        years.Add(new SelectListItem() { Text = i.ToString(), Value = i.ToString(), Selected = (i == Model.Value.Year ? true : false) });
     }
 }
+<fieldset data-role="controlgroup" data-type="horizontal">
+    @Html.DropDownList("months", months, htmlAttributes: new { data_min = true, data_inline = true, id = "dteMonth" })
+    @Html.DropDownList("days", days, htmlAttributes: new { data_min = true, data_inline = true, id = "dteDay" })
+    @Html.DropDownList("years", years, htmlAttributes: new { data_min = true, data_inline = true, id = "dteYear" })
+</fieldset>

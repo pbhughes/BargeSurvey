@@ -12,10 +12,10 @@ namespace BargeSurvey.Models
         public SurveyContext()
             : base("SurveyDB")
         {
-
         }
         public DbSet<Survey> Surveys { get; set; }
         public DbSet<BargeSample> BargeSamples { get; set; }
+        public DbSet<Draft> Drafts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

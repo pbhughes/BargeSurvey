@@ -9,8 +9,8 @@ namespace BargeSurvey.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
-            ContextKey = "BargeSurvey.Models.SurveyContext";
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(BargeSurvey.Models.SurveyContext context)

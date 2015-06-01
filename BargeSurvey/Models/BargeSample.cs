@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BargeSurvey.Models
 {
@@ -14,6 +15,7 @@ namespace BargeSurvey.Models
             LoadedPrior = false;
             PumpedAfterLight = false;
             BargeType = BargeSurvey.Models.BargeType.Box;
+            Drafts = new List<Draft>();
         }
         [Key]
         [Required]
@@ -41,52 +43,9 @@ namespace BargeSurvey.Models
         public bool PumpedAfterLight { get; set; }
 
         [Required]
-        [Display(Name="Reading 1:")]
-        [RegularExpression(@"\d+(\.\d{1,2})?")]
-        [Range(0d, 216d)]
-        public Single ReadingP1 { get; set; }
+        [Display(Name = "Drafts")]
+        public ICollection<Draft> Drafts { get; set; }
 
-        [Required]
-        [Display(Name = "Reading 2:")]
-        [RegularExpression(@"\d+(\.\d{1,2})?")]
-        [Range(0d, 216d)]
-        public Single ReadingP2 { get; set; }
-
-        [Required]
-        [Display(Name = "Reading 3:")]
-        [RegularExpression(@"\d+(\.\d{1,2})?")]
-        [Range(0d, 216d)]
-        public Single ReadingP3 { get; set; }
-
-        [Required]
-        [Display(Name = "Reading 4:")]
-        [RegularExpression(@"\d+(\.\d{1,2})?")]
-        [Range(0d, 216d)]
-        public Single ReadingP4 { get; set; }
-
-        [Required]
-        [Display(Name = ":Reading 1")]
-        [RegularExpression(@"\d+(\.\d{1,2})?")]
-        [Range(0d, 216d)]
-        public Single ReadingS1 { get; set; }
-
-        [Required]
-        [Display(Name = ":Reading 2")]
-        [Range(0d, 216d)]
-        public Single ReadingS2 { get; set; }
-
-        [Required]
-        [Display(Name = ":Reading 3")]
-        [RegularExpression(@"\d+(\.\d{1,2})?")]
-        [Range(0d, 216d)]
-        public Single ReadingS3 { get; set; }
-
-        [Required]
-        [Display(Name = ":Reading 4")]
-        [RegularExpression(@"\d+(\.\d{1,2})?")]
-        [Range(0d, 216d)]
-        public Single ReadingS4 { get; set; }
-        
         [Required]
         public long SurveyId { get; set; }
     }

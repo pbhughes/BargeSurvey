@@ -7,6 +7,10 @@ namespace BargeSurvey.Models
 {
     public class SurveyDBInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<SurveyContext>
     {
+        public SurveyDBInitializer()
+        {
+            
+        }
         protected override void Seed(SurveyContext context)
         {
             base.Seed(context);

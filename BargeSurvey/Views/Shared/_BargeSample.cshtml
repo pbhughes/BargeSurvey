@@ -43,38 +43,81 @@
         
         <div class="ui-grid-b">
 
+            @foreach (var item in Model.Drafts.Where(d => d.DraftType == BargeSurvey.Models.DraftType.Light))
+            {
+                <div class="ui-block-a" data-mini="true">
 
-            <div class="ui-block-a" data-mini="true">
-
-                <div class="ui-grid-solo">
-                    <div class="portReading">@Html.DisplayFor(model => model.ReadingP1)</div>
-                </div>
-                <div class="ui-grid-solo">
-                    <div class="portReading">@Html.DisplayFor(model => model.ReadingP2)</div>
-                </div>
-                <div class="ui-grid-solo">
-                    <div class="portReading">@Html.DisplayFor(model => model.ReadingP3)</div>
-                </div>
-                <div class="ui-grid-solo">
-                    <div class="portReading">@Html.DisplayFor(model => model.ReadingP4)</div>
-                </div>
-            </div>
-
-            <div class="ui-block-b" data-mini="true">
-                <div class="ui-grid-solo">
-                    <div class="starboardReading">@Html.DisplayFor(model => model.ReadingS1)</div>
-                </div>
-                <div class="ui-grid-solo">
-                    <div class="starboardReading">@Html.DisplayFor(model => model.ReadingS2)</div>
-                </div>
-                <div class="ui-grid-solo">
-                    <div class="starboardReading">@Html.DisplayFor(model => model.ReadingS3)</div>
-                </div>
-                <div class="ui-grid-solo">
-                    <div class="starboardReading">@Html.DisplayFor(model => model.ReadingS4)</div>
+                    <div class="ui-grid-solo">
+                        <div class="portReading">@Html.DisplayFor(model => item.ReadingP1)</div>
+                    </div>
+                    <div class="ui-grid-solo">
+                        <div class="portReading">@Html.DisplayFor(model => item.ReadingP2)</div>
+                    </div>
+                    <div class="ui-grid-solo">
+                        <div class="portReading">@Html.DisplayFor(model => item.ReadingP3)</div>
+                    </div>
+                    <div class="ui-grid-solo">
+                        <div class="portReading">@Html.DisplayFor(model => item.ReadingP4)</div>
+                    </div>
                 </div>
 
-            </div>
+                <div class="ui-block-b" data-mini="true">
+                    <div class="ui-grid-solo">
+                        <div class="starboardReading">@Html.DisplayFor(model => item.ReadingS1)</div>
+                    </div>
+                    <div class="ui-grid-solo">
+                        <div class="starboardReading">@Html.DisplayFor(model => item.ReadingS2)</div>
+                    </div>
+                    <div class="ui-grid-solo">
+                        <div class="starboardReading">@Html.DisplayFor(model => item.ReadingS3)</div>
+                    </div>
+                    <div class="ui-grid-solo">
+                        <div class="starboardReading">@Html.DisplayFor(model => item.ReadingS4)</div>
+                    </div>
+
+                </div>
+            }
+
+        </div>
+
+        <div class="ui-grid-b">
+
+            @foreach (var item in Model.Drafts.Where(d => d.DraftType == BargeSurvey.Models.DraftType.Heavy))
+            {
+                <div class="ui-block-a" data-mini="true">
+
+                    <div class="ui-grid-solo">
+                        <div class="portReading">@Html.DisplayFor(model => item.ReadingP1)</div>
+                    </div>
+                    <div class="ui-grid-solo">
+                        <div class="portReading">@Html.DisplayFor(model => item.ReadingP2)</div>
+                    </div>
+                    <div class="ui-grid-solo">
+                        <div class="portReading">@Html.DisplayFor(model => item.ReadingP3)</div>
+                    </div>
+                    <div class="ui-grid-solo">
+                        <div class="portReading">@Html.DisplayFor(model => item.ReadingP4)</div>
+                    </div>
+                </div>
+
+                <div class="ui-block-b" data-mini="true">
+                    <div class="ui-grid-solo">
+                        <div class="starboardReading">@Html.DisplayFor(model => item.ReadingS1)</div>
+                    </div>
+                    <div class="ui-grid-solo">
+                        <div class="starboardReading">@Html.DisplayFor(model => item.ReadingS2)</div>
+                    </div>
+                    <div class="ui-grid-solo">
+                        <div class="starboardReading">@Html.DisplayFor(model => item.ReadingS3)</div>
+                    </div>
+                    <div class="ui-grid-solo">
+                        <div class="starboardReading">@Html.DisplayFor(model => item.ReadingS4)</div>
+                    </div>
+
+                </div>
+            }
+
+
         </div>
     </div>
     <p>

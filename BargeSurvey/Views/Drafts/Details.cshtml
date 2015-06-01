@@ -1,0 +1,99 @@
+﻿@model BargeSurvey.Models.Draft
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Draft</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DraftType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DraftType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReadingP1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReadingP1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReadingP2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReadingP2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReadingP3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReadingP3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReadingP4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReadingP4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReadingS1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReadingS1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReadingS2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReadingS2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReadingS3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReadingS3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReadingS4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReadingS4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BargeSampleId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BargeSampleId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

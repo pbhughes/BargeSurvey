@@ -68,13 +68,14 @@
                     </div>
 
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }, htmlAttributes: new { data_inline = "true", data_role = "button", data_mini = "true" }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, htmlAttributes: new { data_inline = "true", data_role = "button", data_mini = "true" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, htmlAttributes: new { data_inline = "true", data_role = "button", data_mini = "true" })|
+                    @Html.ActionLink("Add Sample", "Create", "BargeSample", new { surveyId = item.Id }, htmlAttributes: new { data_inline = "true", data_role = "button", data_mini = "true" })
 
 
                     <div data-role="collapsible" data-mini="true">
-                        <h2>@string.Format("{0}  Count:{0}", "Barge Samples", item.BargeSamples.Count)</h2>
+                        <h2>@string.Format("{0}  Count:{1}", "Barge Samples", item.BargeSamples.Count)</h2>
 
-
+                     
                         @if (item.BargeSamples.Count > 0)
                         {
                             foreach (var s in item.BargeSamples)
@@ -83,8 +84,6 @@
                             }
                         }
                     </div><!-- /grid-a -->
-                  
-
 
                 </div>
             </div>

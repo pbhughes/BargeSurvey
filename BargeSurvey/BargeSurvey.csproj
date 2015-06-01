@@ -152,19 +152,24 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BargeSampleController.cs" />
+    <Compile Include="Controllers\DraftsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SurveysController.cs" />
+    <Compile Include="Extensions\DraftExtensions.cs" />
+    <Compile Include="Extensions\FlipSwitchFor.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201505172156325_InitialCreate.cs" />
-    <Compile Include="Migrations\201505172156325_InitialCreate.Designer.cs">
-      <DependentUpon>201505172156325_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201505192253104_Reset.cs" />
+    <Compile Include="Migrations\201505192253104_Reset.Designer.cs">
+      <DependentUpon>201505192253104_Reset.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\BargeSample.cs" />
     <Compile Include="Models\BargeType.cs" />
+    <Compile Include="Models\Draft.cs" />
+    <Compile Include="Models\DraftType.cs" />
     <Compile Include="Models\RiverConditions.cs" />
     <Compile Include="Models\States.cs" />
     <Compile Include="Models\Survey.cs" />
@@ -294,9 +299,16 @@
     <Content Include="Views\Shared\_BargeSample.cshtml" />
     <Content Include="Views\BargeSample\Delete.cshtml" />
     <Content Include="Views\BargeSample\Create.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\IsTrue.cshtml" />
     <Content Include="Views\BargeSample\Edit.cshtml" />
     <Content Include="Views\Shared\_Navigation.cshtml" />
+    <Content Include="Views\Drafts\Create.cshtml" />
+    <Content Include="Views\Drafts\Delete.cshtml" />
+    <Content Include="Views\Drafts\Details.cshtml" />
+    <Content Include="Views\Drafts\Edit.cshtml" />
+    <Content Include="Views\Drafts\Index.cshtml" />
+    <Content Include="Views\Shared\IsTrue.cshtml" />
+    <Content Include="Views\Partial\IsTrue.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -305,8 +317,8 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201505172156325_InitialCreate.resx">
-      <DependentUpon>201505172156325_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201505192253104_Reset.resx">
+      <DependentUpon>201505192253104_Reset.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resource1.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

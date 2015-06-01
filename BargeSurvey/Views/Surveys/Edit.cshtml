@@ -76,7 +76,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ClosedOut, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ClosedOut)
+                @Html.FlipSwitchFor(model => model.ClosedOut);
                 @Html.ValidationMessageFor(model => model.ClosedOut)
             </div>
         </div>
@@ -94,7 +94,7 @@
 
 
     <div data-role="collapsible">
-        <h2>@string.Format("{0}  Count:{0}", "Barge Samples", Model.BargeSamples.Count)</h2>
+        <h2>@string.Format("{0}  Count:{1}", "Barge Samples", Model.BargeSamples.Count)</h2>
 
 
         @if (Model.BargeSamples.Count > 0)

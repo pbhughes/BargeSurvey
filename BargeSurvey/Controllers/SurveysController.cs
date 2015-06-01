@@ -20,7 +20,9 @@ namespace BargeSurvey.Controllers
         // GET: Surveys
         public async Task<ActionResult> Index()
         {
-            return View(await db.Surveys.Where(x => x.ClosedOut == false).ToListAsync());
+            //return View(await db.Surveys.Where(x => x.ClosedOut == false).ToListAsync());
+            var all = await db.Surveys.Where(x => x.ClosedOut == false).Include("BargeSamples.Drafts").ToListAsync();
+            return View(all);
         }
 
         // GET: Surveys/Details/5
@@ -84,15 +86,20 @@ namespace BargeSurvey.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Terminal,ClosedOut,Customer,SamplerName,City,State,Purpose,SurveyDate")] Survey survey)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Terminal,ClosedOut,Customer,SamplerName,City,State,Purpose")] Survey survey)
         {
+
+            int days = int.Parse(Request.Form["SurveyDate.days"].ToString());
+            int months = int.Parse(Request.Form["SurveyDate.months"].ToString());
+            int years = int.Parse(Request.Form["SurveyDate.years"].ToString());
+            survey.SurveyDate = new DateTime(years, months, days);
             if (ModelState.IsValid)
             {
                 db.Entry(survey).State = EntityState.Modified;
                 await db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                
             }
-            return View(survey);
+            return RedirectToAction("Edit", survey.Id);
         }
 
         // GET: Surveys/Delete/5
