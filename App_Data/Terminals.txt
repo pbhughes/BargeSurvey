@@ -1,0 +1,22 @@
+﻿[
+		{
+		  "Name": "Calvert City Coal Terminal",
+		  "ID": 1
+		},
+		{
+		  "Name": "Four River",
+		  "ID": 2
+		},
+		{
+		  "Name": "River View",
+		  "ID": 3
+		},
+		{
+		  "Name": "Mount Vernon Transfer Yard",
+		  "ID": 4
+		},
+		{
+		  "Name": "Power Dock",
+		  "ID": 5
+		}
+]

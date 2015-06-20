@@ -1,0 +1,128 @@
+﻿h1 {
+    color: #0086cd;
+}
+
+h2 {
+    color: #76ac3e;
+}
+
+h3 {
+    color: #0086cd;
+}
+
+h4 {
+    color: #76ac3e;
+}
+
+.logo {
+    float: left;
+    padding-right: 10px;
+    display: inline;
+}
+
+.navbar-inverse {
+    background: #e8e8e8;
+}
+
+.surveys-path {
+    color: #0086cd;
+}
+
+.navbar-header {
+    margin: 50px 10px auto 30px;
+}
+
+.navbar-brand {
+    font-size: 28px;
+}
+
+.navbar-collapse {
+    margin: 50px 10px auto 30px;
+}
+
+.navbar-inverse .navbar-brand {
+    color: rgb(0,134,205);
+    text-transform: uppercase;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: rgb(118,172,62);
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background: rbg(226,227,228);
+}
+
+.container {
+    font: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists
+   will truncate terms that are too long to fit in the left column
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+}
+
+div img {
+    float: left;
+}
+
+.container-info {
+    padding: 40px, 0, 0, 0;
+}
+
+.container-info p {
+    padding: 20px;
+}
+
+container-info h3 {
+    padding-bottom: 30px;
+}
+
+.btn-default {
+    background-color: #76ac3e;
+    margin: 25px 0 25px 0;
+}
+
+.spinner {
+    z-index: 3;
+    text-align: center;
+    clear: both;
+}
+
+.telephoneInput {
+    display: block;
+}
+
+.tools {
+    margin: 0 auto 0 auto;
+}
+
+input {
+    max-width: 300px;
+    margin: 10px auto 10px auto;
+}
+
+select {
+    max-width: 300px;
+    margin: 10px auto 10px auto;
+}
+
+label {
+    display: block;
+}

@@ -1,0 +1,5 @@
+[
+	{"Customer":"2","Surveyor":"5","SurveyDate":"2015-06-10T00:00:00","SurveyorPhone":"(123) 456-7895","Terminal":"1","City":"Morgantown","State":"KY"},
+	{"Customer":"5","Surveyor":"2","SurveyDate":"2015-06-10T00:00:00","SurveyorPhone":"(270) 703-4858","Terminal":"5","City":"ShawneeTown","State":"IL"},
+	{"Customer":"1","Surveyor":"3","SurveyDate":"2015-06-24T00:00:00","SurveyorPhone":"(123) 456-7896","Terminal":"5","City":"Uniontown","State":"KY"}
+]

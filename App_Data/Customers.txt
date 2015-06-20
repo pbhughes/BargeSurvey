@@ -1,0 +1,22 @@
+﻿[
+		{
+		  "Name": "TVA",
+		  "ID": 1
+		},
+		{
+		  "Name": "Edison South",
+		  "ID": 2
+		},
+		{
+		  "Name": "Paducah Power",
+		  "ID": 3
+		},
+		{
+		  "Name": "Henderson Union",
+		  "ID": 4
+		},
+		{
+		  "Name": "Twin Lakes",
+		  "ID": 5
+		}
+]
